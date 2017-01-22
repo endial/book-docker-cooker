@@ -35,14 +35,12 @@ Linux device 4.4.0-45-generic
 
 ```
 sudo apt-get install -y --install-recommends linux-generic-lts-trusty
-
 ```
 
 ##### Ubuntu 14.04 LTS {#ubuntu-1404-lts}
 
 ```
 sudo apt-get install -y --install-recommends linux-generic-lts-xenial
-
 ```
 
 ##### Debian 7 Wheezy {#debian-7-wheezy}
@@ -56,7 +54,6 @@ $
 echo
 "deb http://http.debian.net/debian wheezy-backports main"
  | sudo tee /etc/apt/sources.list.d/backports.list
-
 ```
 
 升级到`backports`内核：
@@ -64,7 +61,6 @@ echo
 ```
 $ sudo apt-get update
 $ sudo apt-get -t wheezy-backports install linux-image-amd64
-
 ```
 
 ##### Debian 8 Jessie {#debian-8-jessie}
@@ -78,7 +74,6 @@ $
 echo
 "deb http://http.debian.net/debian jessie-backports main"
  | sudo tee /etc/apt/sources.list.d/backports.list
-
 ```
 
 升级到`backports`内核：
@@ -86,7 +81,6 @@ echo
 ```
 $ sudo apt-get update
 $ sudo apt-get -t jessie-backports install linux-image-amd64
-
 ```
 
 需要注意的是，升级到`backports`的内核之后，会因为`AUFS`内核模块不可用，而使用默认的`devicemapper`驱动，并且配置为`loop-lvm`，这是不推荐的。因此，不要忘记安装 Docker 后，配置`overlay2`存储层驱动。
@@ -100,7 +94,6 @@ WARNING: Your kernel does not support cgroup swap limit. WARNING: Your
 kernel does not support swap 
 limit
  capabilities. Limitation discarded.
-
 ```
 
 或者
@@ -116,7 +109,6 @@ WARNING: No oom
 kill
 disable
  support
-
 ```
 
 如果需要这些功能，就需要修改 GRUB 的配置文件`/etc/default/grub`，在`GRUB_CMDLINE_LINUX`中添加内核引导参数`cgroup_enable=memory swapaccount=1`。
@@ -126,7 +118,6 @@ disable
 ```
 $ sudo update-grub
 $ sudo reboot
-
 ```
 
 ### 使用脚本自动安装 {#使用脚本自动安装}
@@ -137,7 +128,6 @@ Docker 官方为了简化安装流程，提供了一套安装脚本，Ubuntu 和
 curl 
 -s
 SL https://get.docker.com/ | sh
-
 ```
 
 执行这个命令后，脚本就会自动的将一切准备工作做好，并且把 Docker 安装在系统中。
@@ -150,7 +140,6 @@ SL https://get.docker.com/ | sh
 curl 
 -s
 SL http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/docker-engine/internet | sh -
-
 ```
 
 #### DaoCloud 的安装脚本 {#daocloud-的安装脚本}
@@ -159,7 +148,6 @@ SL http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/docker-engine/internet 
 curl 
 -s
 SL https://get.daocloud.io/docker | sh
-
 ```
 
 ### 手动安装 {#手动安装}
@@ -174,7 +162,6 @@ SL https://get.daocloud.io/docker | sh
 
 ```
 $ sudo apt-get install linux-image-extra-$(uname -r) linux-image-extra-virtual
-
 ```
 
 ##### 12.04 LTS 图形界面 {#1204-lts-图形界面}
@@ -183,7 +170,6 @@ $ sudo apt-get install linux-image-extra-$(uname -r) linux-image-extra-virtual
 
 ```
 $ sudo apt-get install xserver-xorg-lts-trusty libgl1-mesa-glx-lts-trusty
-
 ```
 
 #### 添加 APT 镜像源 {#添加-apt-镜像源}
@@ -197,14 +183,12 @@ _国内的一些软件源镜像（比如_[_阿里云_](http://mirrors.aliyun.com
 ```
 $ sudo apt-get update
 $ sudo apt-get install apt-transport-https ca-certificates
-
 ```
 
 为了确认所下载软件包的合法性，需要添加 Docker 官方软件源的 GPG 密钥。
 
 ```
 $ sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 58118E89F3A912897C070ADBF76221572C52609D
-
 ```
 
 然后，我们需要向`source.list`中添加 Docker 软件源，下表列出了不同的 Ubuntu 和 Debian 版本对应的 APT 源。
@@ -230,14 +214,12 @@ REPO
 >
 "
  | sudo tee /etc/apt/sources.list.d/docker.list
-
 ```
 
 添加成功后，更新 apt 软件包缓存。
 
 ```
 $ sudo apt-get update
-
 ```
 
 #### 安装 Docker {#安装-docker}
@@ -246,7 +228,6 @@ $ sudo apt-get update
 
 ```
 $ sudo apt-get install docker-engine
-
 ```
 
 如果系统中存在旧版本的 Docker （`lxc-docker`,`docker.io`），会提示是否先删除，选择是即可。
@@ -257,7 +238,6 @@ $ sudo apt-get install docker-engine
 
 ```
 $ sudo service docker start
-
 ```
 
 ##### Ubuntu 16.04、Debian 8 Jessie/Stretch {#ubuntu-1604、debian-8-jessiestretch}
@@ -267,7 +247,6 @@ $ sudo systemctl
 enable
  docker
 $ sudo systemctl start docker
-
 ```
 
 #### 建立 docker 用户组 {#建立-docker-用户组}
@@ -278,7 +257,6 @@ $ sudo systemctl start docker
 
 ```
 $ sudo groupadd docker
-
 ```
 
 将当前用户加入`docker`组：
