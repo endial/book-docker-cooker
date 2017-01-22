@@ -18,7 +18,7 @@
         * [在Ubuntu\/Debian上安装](base/command/install-centos.md)
         * [在macOS上安装](base/command/install-macos.md)
         * 在Redhat\/Centos上安装
-        * 镜像加速
+        * [镜像加速](base/command/镜像加速.md)
     * [镜像操作](base/command/image.md)
     * [容器操作](base/command/container.md)
     * [仓库管理](base/command/registry.md)
