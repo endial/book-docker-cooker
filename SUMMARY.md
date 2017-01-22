@@ -14,10 +14,10 @@
     * [Docker 容器](base/concept/container.md)
     * [Docker 仓库](base/concept/docker-仓库.md)
 * [Docker 常用命令](./base/command/readme.md)
-    * [安装](base/command/安装.md)
-    * 镜像操作
-    * 容器操作
-    * 仓库管理
+    * [安装](base/command/install.md)
+    * [镜像操作](base/command/image.md)
+    * [容器操作](base/command/container.md)
+    * [仓库管理](base/command/registry.md)
 * [Dockerfile 文件](./base/dockfile/readme.md)
 
 ## PART II: Docker 进阶使用
