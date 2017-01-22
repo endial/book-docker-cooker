@@ -9,7 +9,7 @@
   ],
   "pluginsConfig": {
     "github-buttons": {
-      "repo": "endial/book-docke-rcooker",
+      "repo": "endial/book-docker-cooker",
       "types": [
         "star",
         "watch"
