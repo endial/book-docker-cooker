@@ -10,7 +10,7 @@
 * [Docker 基本概念](./base/concept/readme.md)
     * [Docker Client](base/concept/client.md)
     * [Docker Daemon](base/concept/docker-daemon.md)
-    * Docker 镜像
+    * [Docker 镜像](base/concept/docker-镜像.md)
     * [Docker 容器](base/concept/container.md)
     * Docker 仓库
 * [Docker 常用命令](./base/command/readme.md)
