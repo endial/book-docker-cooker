@@ -14,7 +14,7 @@
     * [Docker 容器](base/concept/container.md)
     * [Docker 仓库](base/concept/docker-仓库.md)
 * [Docker 常用命令](./base/command/readme.md)
-    * 安装
+    * [安装](base/command/安装.md)
     * 镜像操作
     * 容器操作
     * 仓库管理
