@@ -15,6 +15,10 @@
     * [Docker 仓库](base/concept/docker-仓库.md)
 * [Docker 常用命令](./base/command/readme.md)
     * [安装](base/command/install.md)
+        * install-centos
+        * install-macos
+        * install-debian
+        * speedup
     * [镜像操作](base/command/image.md)
     * [容器操作](base/command/container.md)
     * [仓库管理](base/command/registry.md)
