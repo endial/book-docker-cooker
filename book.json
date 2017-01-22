@@ -1,3 +1,20 @@
 {
-    "plugins": [ "multipart", "codeblock-filename", "gtoc" ]
+  "title": "Docker Cooker",
+  "author": "endial",
+  "plugins": [ 
+    "multipart", 
+    "codeblock-filename", 
+    "gtoc",
+    "github-buttons" 
+  ],
+  "pluginsConfig": {
+    "github-buttons": {
+      "repo": "endial/book-docke-rcooker",
+      "types": [
+        "star",
+        "watch"
+      ],
+      "size": "small"
+    }
+  }
 }
