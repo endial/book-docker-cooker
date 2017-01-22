@@ -20,11 +20,8 @@ Docker 需要安装在 64 位的 x86 平台或 ARM 平台上（如[树莓派](ht
 用户可以通过如下命令检查自己的内核版本详细信息：
 
 ```
-$ uname 
--a
-
-Linux device 4.4.0-45-generic 
-#66~14.04.1-Ubuntu SMP Wed Oct 19 15:05:38 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
+$ uname -a
+Linux device 4.4.0-45-generic #66~14.04.1-Ubuntu SMP Wed Oct 19 15:05:38 UTC 2016 x86_64 x86_64 x86_64 GNU/Linux
 ```
 
 #### 升级内核 {#升级内核}
@@ -50,10 +47,7 @@ Debian 7 的内核默认为 3.2，为了满足 Docker 的需求，应该安装`b
 执行下面的命令添加`backports`源：
 
 ```
-$ 
-echo
-"deb http://http.debian.net/debian wheezy-backports main"
- | sudo tee /etc/apt/sources.list.d/backports.list
+$ echo "deb http://http.debian.net/debian wheezy-backports main" | sudo tee /etc/apt/sources.list.d/backports.list
 ```
 
 升级到`backports`内核：
@@ -70,10 +64,7 @@ Debian 8 的内核默认为 3.16，满足基本的 Docker 运行条件。但是�
 执行下面的命令添加`backports`源：
 
 ```
-$ 
-echo
-"deb http://http.debian.net/debian jessie-backports main"
- | sudo tee /etc/apt/sources.list.d/backports.list
+$ echo "deb http://http.debian.net/debian jessie-backports main" | sudo tee /etc/apt/sources.list.d/backports.list
 ```
 
 升级到`backports`内核：
@@ -91,24 +82,15 @@ $ sudo apt-get -t jessie-backports install linux-image-amd64
 
 ```
 WARNING: Your kernel does not support cgroup swap limit. WARNING: Your
-kernel does not support swap 
-limit
- capabilities. Limitation discarded.
+kernel does not support swap limit capabilities. Limitation discarded.
 ```
 
 或者
 
 ```
-WARNING: No memory 
-limit
- support
-WARNING: No swap 
-limit
- support
-WARNING: No oom 
-kill
-disable
- support
+WARNING: No memory limit support
+WARNING: No swap limit support
+WARNING: No oom kill disable support
 ```
 
 如果需要这些功能，就需要修改 GRUB 的配置文件`/etc/default/grub`，在`GRUB_CMDLINE_LINUX`中添加内核引导参数`cgroup_enable=memory swapaccount=1`。
@@ -125,9 +107,7 @@ $ sudo reboot
 Docker 官方为了简化安装流程，提供了一套安装脚本，Ubuntu 和 Debian 系统可以使用这套脚本安装：
 
 ```
-curl 
--s
-SL https://get.docker.com/ | sh
+curl -sSL https://get.docker.com/ | sh
 ```
 
 执行这个命令后，脚本就会自动的将一切准备工作做好，并且把 Docker 安装在系统中。
@@ -137,9 +117,7 @@ SL https://get.docker.com/ | sh
 #### 阿里云的安装脚本 {#阿里云的安装脚本}
 
 ```
-curl 
--s
-SL http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/docker-engine/internet | sh -
+curl -sSL http://acs-public-mirror.oss-cn-hangzhou.aliyuncs.com/docker-engine/internet | sh -
 ```
 
 #### DaoCloud 的安装脚本 {#daocloud-的安装脚本}
@@ -206,14 +184,7 @@ $ sudo apt-key adv --keyserver hkp://p80.pool.sks-keyservers.net:80 --recv-keys 
 用下面的命令将 APT 源添加到`source.list`（将其中的`<REPO>`替换为上表的值）：
 
 ```
-$ 
-echo
-"
-<
-REPO
->
-"
- | sudo tee /etc/apt/sources.list.d/docker.list
+$ echo "<REPO>" | sudo tee /etc/apt/sources.list.d/docker.list
 ```
 
 添加成功后，更新 apt 软件包缓存。
@@ -243,9 +214,7 @@ $ sudo service docker start
 ##### Ubuntu 16.04、Debian 8 Jessie/Stretch {#ubuntu-1604、debian-8-jessiestretch}
 
 ```
-$ sudo systemctl 
-enable
- docker
+$ sudo systemctl enable docker
 $ sudo systemctl start docker
 ```
 
@@ -262,10 +231,7 @@ $ sudo groupadd docker
 将当前用户加入`docker`组：
 
 ```
-$ sudo usermod 
--a
-G docker 
-$USER
+$ sudo usermod -aG docker $USER
 ```
 
 ### 参考文档 {#参考文档}
