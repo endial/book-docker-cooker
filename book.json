@@ -1,6 +1,6 @@
 {
   "title": "Docker Cooker",
-  "author": "endial",
+  "author": "Endial Fang",
   "plugins": [ 
     "multipart", 
     "codeblock-filename", 
