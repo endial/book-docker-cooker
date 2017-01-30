@@ -16,7 +16,7 @@ daemon off
 
 如果不设置则默认为 \`on\`。
 
-也可以使用 \`nginx -g "deamon off" \` 在运行时添加全局变量。
+也可以使用 \`nginx -g "daemon off;" \` 在运行时添加全局变量。
 
 这样就可以在 docker-compose 脚本中添加这个参数，不用修改 nginx 的配置文件。
 
